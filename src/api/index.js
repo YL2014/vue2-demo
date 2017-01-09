@@ -8,23 +8,6 @@ AV.init({
 
 const Items = AV.Object.extend('Items')
 
-export const register = () => {
-  let username = 'test'
-  let password = 'testtesttest'
-  let email = 'test@jd.com'
-
-  let user = new AV.User()
-  user.setUsername(username)
-  user.setPassword(password)
-  user.setEmail(email)
-
-  user.signUp().then((loginedUser) => {
-    console.log(loginedUser)
-  }, (err) => {
-    console.log(err)
-  })
-}
-
 export const login = (username, password) => {
   return AV.User.logIn(username, password)
 }
